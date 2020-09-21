@@ -250,7 +250,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>留言板</span>
+      <span>访客登记薄</span>
     </a>
     
   </li>
@@ -261,7 +261,7 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>学习直通车</span>
     </a>
     
   </li>
@@ -273,7 +273,7 @@
       
       <i class="fas fa-list" style="zoom: 0.6;"></i>
       
-      <span>Medias</span>
+      <span>休闲生活馆</span>
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
     <ul class="sub-nav menus_item_child ">
@@ -283,7 +283,7 @@
           
           <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Musics</span>
+          <span>听歌</span>
         </a>
       </li>
       
@@ -292,7 +292,7 @@
           
           <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Movies</span>
+          <span>追剧</span>
         </a>
       </li>
       
@@ -301,7 +301,7 @@
           
           <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Books</span>
+          <span>看书</span>
         </a>
       </li>
       
@@ -310,7 +310,16 @@
           
           <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Galleries</span>
+          <span>赏图</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/online">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>看直播</span>
         </a>
       </li>
       
@@ -405,7 +414,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			留言板
+			访客登记薄
 		</a>
           
         </li>
@@ -416,7 +425,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			友情链接
+			学习直通车
 		</a>
           
         </li>
@@ -427,48 +436,58 @@
 			
 				<i class="fa-fw fas fa-list"></i>
 			
-			Medias
+			休闲生活馆
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
             <ul  style="background:  ;" >
               
                 <li>
 
-                  <a href="/musics " style="margin-left:75px">
+                  <a href="/musics " style="margin-left:50px">
 				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
 			      
-		          <span>Musics</span>
+		          <span>听歌</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/movies " style="margin-left:75px">
+                  <a href="/movies " style="margin-left:50px">
 				  
-				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
 			      
-		          <span>Movies</span>
+		          <span>追剧</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/books " style="margin-left:75px">
+                  <a href="/books " style="margin-left:50px">
 				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-book" style="position: absolute;left:28px" ></i>
 			      
-		          <span>Books</span>
+		          <span>看书</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/galleries " style="margin-left:75px">
+                  <a href="/galleries " style="margin-left:50px">
 				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-image" style="position: absolute;left:28px" ></i>
 			      
-		          <span>Galleries</span>
+		          <span>赏图</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/online " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:28px" ></i>
+			      
+		          <span>看直播</span>
                   </a>
                 </li>
               
@@ -509,7 +528,7 @@
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
-                        backSpeed: 50,
+                        backSpeed: 30,
                         showCursor: true
                     });
                 </script>
@@ -542,13 +561,79 @@
             </div>
             <div class="tag-chips">
                 
-                你目前还没有对文章进行分类.
+                
+                
+                <a href="/categories/%E6%9D%82/" title="杂: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">杂
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
                 
             </div>
         </div>
     </div>
 </div>
 
+
+    
+    <style type="text/css">
+    #category-radar {
+        width: 100%;
+        height: 360px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="category-radar" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+    let radarChart = echarts.init(document.getElementById('category-radar'));
+
+    
+
+    let option = {
+        title: {
+            left: 'center',
+            text: '文章分类雷达图',
+            textStyle: {
+                fontWeight: 500,
+                fontSize: 22
+            }
+        },
+        tooltip: {},
+        radar: {
+            name: {
+                textStyle: {
+                    color: '#3C4858'
+                }
+            },
+            indicator: [{"name":"杂","max":2}],
+            nameGap: 5,
+            center: ['50%','55%'],
+            radius: '66%'
+        },
+        series: [{
+            type: 'radar',
+            color: ['#3ecf8e'],
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data : [
+                {
+                    value : [1],
+                    name : '文章分类数量'
+                }
+            ]
+        }]
+    };
+
+    radarChart.setOption(option);
+</script>
 
     
 
@@ -561,16 +646,12 @@
 <style>
     .aplayer .aplayer-lrc p {
         
-        display: none;
-        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
         
         font-size: 15px;
         color: #42b983;
@@ -595,12 +676,12 @@
                    type="playlist"
                    id="5222660262"
                    fixed='true'
-                   autoplay='false'
+                   autoplay='true'
                    theme='#42b983'
                    loop='all'
                    order='random'
                    preload='auto'
-                   volume='0.7'
+                   volume='0.2'
                    list-folded='true'
         >
         </meting-js>
@@ -621,7 +702,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75</span>&nbsp;字
+                class="white-color">124</span>&nbsp;字
             
             
             
