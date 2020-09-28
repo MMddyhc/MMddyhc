@@ -261,11 +261,52 @@
   <li class="hide-on-med-and-down nav-item">
     
     <a href="/friends" class="waves-effect waves-light">
+
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>学习情报处</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/code">
+          
+          <i class="fas fa-code" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Code</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/gis">
+          
+          <i class="fas fa-map" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>GIS</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tools">
+          
+          <i class="fas fa-wrench" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>工具箱</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/materials">
+          
+          <i class="fas fa-pen" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>素材库</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -424,12 +465,56 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/friends" class="waves-effect waves-light">
+		<a href="javascript:;">
 			
-			    <i class="fa-fw fas fa-address-book"></i>
+				<i class="fa-fw fas fa-address-book"></i>
 			
 			学习情报处
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background: #B5EDFE;" >
+              
+                <li>
+
+                  <a href="/code " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-code" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Code</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/gis " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-map" style="position: absolute;left:50px" ></i>
+			      
+		          <span>GIS</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tools " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-wrench" style="position: absolute;left:50px" ></i>
+			      
+		          <span>工具箱</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/materials " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-pen" style="position: absolute;left:50px" ></i>
+			      
+		          <span>素材库</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -442,13 +527,13 @@
 			休闲生活馆
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  style="background: #B5EDFE;" >
               
                 <li>
 
-                  <a href="/musics " style="margin-left:50px">
+                  <a href="/musics " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
 			      
 		          <span>听歌</span>
                   </a>
@@ -456,9 +541,9 @@
               
                 <li>
 
-                  <a href="/movies " style="margin-left:50px">
+                  <a href="/movies " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-tv" style="position: absolute;left:28px" ></i>
+				   <i class="fa fas fa-tv" style="position: absolute;left:50px" ></i>
 			      
 		          <span>追剧</span>
                   </a>
@@ -466,9 +551,9 @@
               
                 <li>
 
-                  <a href="/books " style="margin-left:50px">
+                  <a href="/books " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-book" style="position: absolute;left:28px" ></i>
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
 			      
 		          <span>看书</span>
                   </a>
@@ -476,9 +561,9 @@
               
                 <li>
 
-                  <a href="/games " style="margin-left:50px">
+                  <a href="/games " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-mouse" style="position: absolute;left:28px" ></i>
+				   <i class="fa fas fa-mouse" style="position: absolute;left:50px" ></i>
 			      
 		          <span>玩游戏</span>
                   </a>
@@ -486,9 +571,9 @@
               
                 <li>
 
-                  <a href="/online " style="margin-left:50px">
+                  <a href="/online " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-play" style="position: absolute;left:28px" ></i>
+				   <i class="fa fas fa-play" style="position: absolute;left:50px" ></i>
 			      
 		          <span>看直播</span>
                   </a>
@@ -590,7 +675,7 @@
         flex-shrink: 0;
     }
 
-    .frind-ship .title h1 {
+    .frind-ship .title h2 {
         padding-bottom: 5px;
         border-bottom: 2px solid #fff;
         position: relative;
@@ -774,7 +859,7 @@
                                     <div class="title">
                                         <img src="https://img9.doubanio.com/view/photo/m/public/p2620456045.webp" alt="img">
                                         <div>
-                                            <h1>我，喜欢你</h1>
+                                            <h2>我，喜欢你</h2>
 											<h3>剧情/爱情</h3>
 											<h3>★★★</h3>
 											<h5>在看ing</h5>
@@ -797,7 +882,7 @@
                                     <div class="title">
                                         <img src="https://img9.doubanio.com/view/photo/l/public/p2614037605.webp" alt="img">
                                         <div>
-                                            <h1>重启 极夜听雷</h1>
+                                            <h2>重启之极海听雷</h2>
 											<h3>悬疑/冒险</h3>
 											<h3>★★★★</h3>
 											<h5>在看ing</h5>
@@ -820,7 +905,7 @@
                                     <div class="title">
                                         <img src="https://img1.doubanio.com/view/photo/m/public/p2621383298.webp" alt="img">
                                         <div>
-                                            <h1>沉默的真相</h1>
+                                            <h2>沉默的真相</h2>
 											<h3>悬疑/犯罪</h3>
 											<h3>★★★★★</h3>
 											<h5>已看完（2020/9/22）</h5>
@@ -843,7 +928,7 @@
                                     <div class="title">
                                         <img src="https://img1.doubanio.com/view/photo/l/public/p2617196258.webp" alt="img">
                                         <div>
-                                            <h1>摩天大楼</h1>
+                                            <h2>摩天大楼</h2>
 											<h3>悬疑/犯罪</h3>
 											<h3>★★★★★</h3>
 											<h5>已看完（2020/8/25）</h5>
@@ -866,7 +951,7 @@
                                     <div class="title">
                                         <img src="https://img1.doubanio.com/view/photo/m/public/p2537131688.webp" alt="img">
                                         <div>
-                                            <h1>知否</h1>
+                                            <h2>知否</h2>
 											<h3>古装/爱情</h3>
 											<h3>★★★★★★</h3>
 											<h5>已二刷（疫情期间）</h5>
@@ -889,7 +974,7 @@
                                     <div class="title">
                                         <img src="https://img1.doubanio.com/view/photo/m/public/p2510604929.webp" alt="img">
                                         <div>
-                                            <h1>非自然死亡</h1>
+                                            <h2>非自然死亡</h2>
 											<h3>悬疑/犯罪</h3>
 											<h3>★★★★★★</h3>
 											<h5>已二刷（疫情期间）</h5>
