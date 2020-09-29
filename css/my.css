@@ -13,6 +13,20 @@
     animation: emoji-face 5s infinite ease-in-out;
 }
 
+/* 修改首页轮播的标题大小 */
+@media only screen and (max-width: 601px) {
+    .bg-cover .title {
+        font-size: 2.5rem;
+    }
+}
+
+/* 修改博客标题的字体大小 */
+@media only screen and (max-width: 601px) {
+    header .brand-logo .logo-span {
+        font-size: 1.5rem;
+    }
+}
+
 @keyframes emoji-face {
     2% {
         transform: translate(0, 1.5px) rotate(1.5deg);
