@@ -851,6 +851,44 @@
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer_2" class="dplayer-video"
+                    ></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer_2'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: '/medias/hs.mp4',
+                pic: 'https://wx4.sinaimg.cn/orj480/007EqN8rly1gi81ui7hblj31hc0u0b29.jpg',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
+
+                    
+					
+					
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="title center-align">
+        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;FPX归还奖杯，泪洒现场，期待凤凰再次涅槃
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
             <div id="dplayer" class="dplayer-video"
                     ></div>
         </div>
@@ -869,8 +907,8 @@
             preload: 'auto',
             volume: Number('0.7'),
             video: {
-                url: '/medias/hs.mp4',
-                pic: 'https://wx4.sinaimg.cn/orj480/007EqN8rly1gi81ui7hblj31hc0u0b29.jpg',
+                url: '/medias/FPX.mp4',
+                pic: '/medias/FPX.png',
                 thumbnails: ''
             }
         });
