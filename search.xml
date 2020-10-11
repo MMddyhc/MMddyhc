@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Python批量修改文件名</title>
+      <link href="/2020/10/11/python-pi-liang-xiu-gai-wen-jian-ming/"/>
+      <url>/2020/10/11/python-pi-liang-xiu-gai-wen-jian-ming/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python批量修改文件名"><a href="#Python批量修改文件名" class="headerlink" title="Python批量修改文件名"></a>Python批量修改文件名</h1><h2 id="问题起因："><a href="#问题起因：" class="headerlink" title="问题起因："></a>问题起因：</h2><p>我需要核对一些表格，但是Excel无法同时打开两个同名文件，这大几十的Excel表要是一个个改名再改回来也太麻烦了</p><h2 id="使用工具及方法："><a href="#使用工具及方法：" class="headerlink" title="使用工具及方法："></a>使用工具及方法：</h2><p>工具：Python3.7<br>方法：<br>（1）os.listdir(path)    将指定路径文件夹中的文件名录入一个列表中<br>（2）os.rename(old_name,new_name)        重命名文件</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os<span class="token comment"># 目标路径</span>path <span class="token operator">=</span> <span class="token string">""</span><span class="token comment">#os.listdir(path)返回指定路径路径文件夹中所有文件名,并将文件名存入列表</span>filename_list <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>path<span class="token punctuation">)</span>p <span class="token operator">=</span> <span class="token number">0</span><span class="token comment">#循环修改所有文件名</span><span class="token keyword">for</span> i <span class="token keyword">in</span> filename_list<span class="token punctuation">:</span>    old_name <span class="token operator">=</span> path <span class="token operator">+</span> filename_list<span class="token punctuation">[</span>p<span class="token punctuation">]</span>    new_name <span class="token operator">=</span> path <span class="token operator">+</span> <span class="token string">"1_"</span> <span class="token operator">+</span> filename_list<span class="token punctuation">[</span>p<span class="token punctuation">]</span>    <span class="token comment">#回退到之前的文件名方法</span>    <span class="token comment">#new_name = path + filename_list[p][2:]</span>    os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>old_name<span class="token punctuation">,</span>new_name<span class="token punctuation">)</span>    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"文件&#123;0&#125;重命名成功,新文件名为&#123;1&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>old_name<span class="token punctuation">,</span>new_name<span class="token punctuation">)</span><span class="token punctuation">)</span>    p <span class="token operator">=</span> p <span class="token operator">+</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 文件操作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于Hexo的Matery主题博客增加视频播放器</title>
       <link href="/2020/10/05/ji-yu-hexo-de-matery-zhu-ti-bo-ke-zeng-jia-shi-pin-bo-fang-qi/"/>
       <url>/2020/10/05/ji-yu-hexo-de-matery-zhu-ti-bo-ke-zeng-jia-shi-pin-bo-fang-qi/</url>
