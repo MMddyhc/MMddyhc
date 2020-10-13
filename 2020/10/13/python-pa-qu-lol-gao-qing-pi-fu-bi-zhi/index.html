@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于Hexo的Matery主题博客增加视频播放器, MMddyhc">
+    <meta name="keywords" content="Python爬取LOL高清皮肤壁纸, MMddyhc">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于Hexo的Matery主题博客增加视频播放器 | MMddyhc</title>
+    <title>Python爬取LOL高清皮肤壁纸 | MMddyhc</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/%E9%A3%9E%E6%9C%BA.png">
 	<link rel="stylesheet" href="/js/prism/prism.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/awesome/css/all.css">
@@ -618,12 +618,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于Hexo的Matery主题博客增加视频播放器</h1>
+                    <h1 class="description center-align post-title">Python爬取LOL高清皮肤壁纸</h1>
                 </div>
             </div>
         </div>
@@ -740,16 +740,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/Matery/">
-                                <span class="chip bg-color">Matery</span>
-                            </a>
-                        
-                            <a href="/tags/Blog/">
-                                <span class="chip bg-color">Blog</span>
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
                             </a>
                         
                     </div>
@@ -760,8 +756,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web/" class="post-category">
-                                Web
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
                             </a>
                         
                     </div>
@@ -773,28 +769,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-05
+                    2020-10-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-06
+                    2020-10-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    689
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -809,74 +805,103 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于Hexo的Matery主题博客增加视频播放器"><a href="#基于Hexo的Matery主题博客增加视频播放器" class="headerlink" title="基于Hexo的Matery主题博客增加视频播放器"></a>基于Hexo的Matery主题博客增加视频播放器</h1><h2 id="问题起因："><a href="#问题起因：" class="headerlink" title="问题起因："></a>问题起因：</h2><p>看了FPX归还全球总决赛奖杯的视频，触景生情，内心很不是滋味，也算是警醒自己吧：<strong>你可以用一年爬的很高很高很高，也可能在一年就摔的很低很低很低</strong>，所以我打算把这个短视频也放到自己的博客上</p>
-<h2 id="最终效果展示："><a href="#最终效果展示：" class="headerlink" title="最终效果展示："></a>最终效果展示：</h2><p><img src="https://img-blog.csdnimg.cn/20201006000600715.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="效果图"></p>
-<h2 id="哪些文件共同生成了video？"><a href="#哪些文件共同生成了video？" class="headerlink" title="哪些文件共同生成了video？"></a>哪些文件共同生成了video？</h2><p>想造出第二个video就肯定要知道video的功能和效果是怎么实现的，于是我找到了下列文件：</p>
-<ol>
-<li><p>主题的配置文件：<strong>themes/hexo-theme-matery/_config.yml</strong></p>
-</li>
-<li><p>生成首页文件：<strong>themes/hexo-theme-matery/layout/index.ejs</strong></p>
-</li>
-<li><p>生成video文件：<strong>themes/hexo-theme-matery/layout/_widget/video.ejs</strong></p>
-<h2 id="主题的-config-yml文件修改："><a href="#主题的-config-yml文件修改：" class="headerlink" title="主题的_config.yml文件修改："></a>主题的_config.yml文件修改：</h2><p>这个想必大家都很熟悉，在之前的 video 下面在加一个 video_2 就行了</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">video</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">showTitle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">title</span><span class="token punctuation">:</span> 生日快乐颖颖子(づ￣3￣)づ╭❤～
-  <span class="token key atrule">url</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">pic</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">thumbnails</span><span class="token punctuation">:</span>
-  <span class="token key atrule">height</span><span class="token punctuation">:</span> <span class="token comment"># 如：400</span>
-  <span class="token key atrule">autoplay</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 是否自动播放</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'#42b983'</span>
-  <span class="token key atrule">loop</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 是否循环播放</span>
-  <span class="token key atrule">preload</span><span class="token punctuation">:</span> <span class="token string">'auto'</span> <span class="token comment"># 预加载，可选值: 'none', 'metadata', 'auto'</span>
-  <span class="token key atrule">volume</span><span class="token punctuation">:</span> <span class="token number">0.7</span>
-  
-<span class="token key atrule">video_2</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">showTitle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">title</span><span class="token punctuation">:</span> FPX归还奖杯，泪洒现场，期待凤凰再次涅槃
-  <span class="token key atrule">url</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">pic</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">thumbnails</span><span class="token punctuation">:</span>
-  <span class="token key atrule">height</span><span class="token punctuation">:</span> <span class="token comment"># 如：400</span>
-  <span class="token key atrule">autoplay</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 是否自动播放</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'#42b983'</span>
-  <span class="token key atrule">loop</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 是否循环播放</span>
-  <span class="token key atrule">preload</span><span class="token punctuation">:</span> <span class="token string">'auto'</span> <span class="token comment"># 预加载，可选值: 'none', 'metadata', 'auto'</span>
-  <span class="token key atrule">volume</span><span class="token punctuation">:</span> <span class="token number">0.7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="生成首页文件index-ejs文件修改："><a href="#生成首页文件index-ejs文件修改：" class="headerlink" title="生成首页文件index.ejs文件修改："></a>生成首页文件index.ejs文件修改：</h2><p>因为我们新加了 video_2 嘛，所以这里也要做对应的修改：<br>先在首页中增加 video_2 相应的代码</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>dream<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token operator">%</span><span class="token operator">></span>
-	<span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_widget/dream'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">&#125;</span> <span class="token operator">%</span><span class="token operator">></span>
+                <h1 id="Python爬取LOL高清皮肤壁纸"><a href="#Python爬取LOL高清皮肤壁纸" class="headerlink" title="Python爬取LOL高清皮肤壁纸"></a>Python爬取LOL高清皮肤壁纸</h1><h2 id="兴趣点："><a href="#兴趣点：" class="headerlink" title="兴趣点："></a>兴趣点：</h2><p>这两天复习爬虫，CSDN上看到了一个爬取LOL皮肤的博客，哎这个有意思，看了一下他写的代码，感觉难度还可以，就结合着自己的理解写了一下</p>
+<h2 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h2><p>传送门：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44936889/article/details/103707406">https://blog.csdn.net/weixin_44936889/article/details/103707406</a></p>
+<h2 id="爬取网址："><a href="#爬取网址：" class="headerlink" title="爬取网址："></a>爬取网址：</h2><p>传送门：<a target="_blank" rel="noopener" href="http://lol.52pk.com/pifu/hero/">http://lol.52pk.com/pifu/hero/</a></p>
+<h2 id="爬虫大体思路及方法："><a href="#爬虫大体思路及方法：" class="headerlink" title="爬虫大体思路及方法："></a>爬虫大体思路及方法：</h2><p>大体思路：<br>（1）我们的目标网页共43页，每页有25个皮肤左右，点开是皮肤大图及相关内容，其中的大图链接就是我们的目标<br>（2）我们要先把大约43×25个皮肤大图展示页面的链接先爬出来放到一个列表中<br>（3）再根据列表中的链接采用循环的方法获取其中的“英雄名-皮肤名”和皮肤图片链接，并将其一对一写入一个列表<br>（4）按顺序爬取列表中图片链接对应的图片并输出对应的提示信息<br>方法：<br>（1）页面获取方法：getHTMLText(url)<br>（2）把所有皮肤页URL写入列表：fillList(skinlist,url)<br>（3）获取皮肤命名和图片URL：getImageAddress(skinlist,nameAndImage)<br>（4）图片下载及保存：getImage(path,nameAndImage)<br>参数解读：<br>（1）skinlist——保存所有皮肤页面链接的列表<br>（2）nameAndImage——保存皮肤命名和皮肤图片链接的列表<br>（3）path——本地保存路径</p>
+<h2 id="部分细节讲解："><a href="#部分细节讲解：" class="headerlink" title="部分细节讲解："></a>部分细节讲解：</h2><p>（1）观察网页原代码，找到页面的规律：<br><img src="https://img-blog.csdnimg.cn/20201013160854559.png#pic_center" alt="页面规律"><br>我们可以得知页面的真实地址，页面数43页和规律，所以后面的代码是这么写：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">:</span>      <span class="token comment">#皮肤展示页面共43页</span>
+new_url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"hero_&#123;&#125;.shtml"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>   <span class="token comment">#拼出每个页面url</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这里我是为了展示，其实没必要爬43页，毕竟Python运行速度太慢了</p>
+<p>（2）目标网页可以识别Request请求，需要伪装成浏览器</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">kv <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"user-agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0"</span><span class="token punctuation">&#125;</span>
+r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> kv<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（3）从页面中获取到的文本尽量用 .strip() 方法去除两端空格</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name <span class="token operator">=</span> hero_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> skin_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（4）踩坑记录：因为阿狸的KD/A皮肤文本里有一个”/“，所以会造成找不到路径的错误，替换成空即可</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name <span class="token operator">=</span> name<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（5）踩坑记录：关于 url 变量，在循环中不要写出下面这样的代码，url会变！url会变！url会变！</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"hero_&#123;&#125;.shtml"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（6）Python标准异常：<br>菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-exceptions.html">https://www.runoob.com/python/python-exceptions.html</a><br>（7）关于打印进程提示信息：<br>有些同学可能认为这个没什么用，但这个很有用：一来可以提示程序运行的进度（Python运行实在是慢），二来可以用来差错，当断点使用</p>
+<h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
 
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>music<span class="token punctuation">.</span>enable <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>theme<span class="token punctuation">.</span>music<span class="token punctuation">.</span>fixed<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token operator">%</span><span class="token operator">></span>
-	<span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_widget/music'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">&#125;</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token keyword">def</span> <span class="token function">getHTMLText</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        kv <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"user-agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0"</span><span class="token punctuation">&#125;</span>
+        r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> kv<span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>encoding <span class="token operator">=</span> r<span class="token punctuation">.</span>apparent_encoding
+        <span class="token keyword">return</span> r<span class="token punctuation">.</span>text
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getHTMLText失败！"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">""</span>
 
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>video<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token operator">%</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_widget/video'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">&#125;</span> <span class="token operator">%</span><span class="token operator">></span>
-					
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>video_2<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token operator">%</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_widget/video_2'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">&#125;</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上面的 if 语句中也要相应增加 theme.video_2.enable</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>current <span class="token operator">===</span> <span class="token number">1</span>
-            <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>theme<span class="token punctuation">.</span>dream<span class="token punctuation">.</span>enable <span class="token operator">||</span> theme<span class="token punctuation">.</span>music<span class="token punctuation">.</span>enable<span class="token punctuation">)</span>
-                    <span class="token operator">||</span> theme<span class="token punctuation">.</span>video<span class="token punctuation">.</span>enable <span class="token operator">||</span> theme<span class="token punctuation">.</span>video_2<span class="token punctuation">.</span>enable <span class="token operator">||</span> theme<span class="token punctuation">.</span>recommend<span class="token punctuation">.</span>enable<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="生成video的video-2-ejs文件的创建："><a href="#生成video的video-2-ejs文件的创建：" class="headerlink" title="生成video的video_2.ejs文件的创建："></a>生成video的video_2.ejs文件的创建：</h2><p>我们已经准备好了 video_2 的位置，现在就差调用的 video_2.ejs 文件的创建工作了</p>
-</li>
-<li><p>首先， video_2 和 video 肯定是一样的，所以复制一份 video.ejs 重命名成 video_2.ejs就可以了</p>
-</li>
-<li><p>然后我们打开 video.ejs 文件，看一下里面是什么，大体思路就是把里面的 video 改成 video_2 就行了，所以更改如下：<br><img src="https://img-blog.csdnimg.cn/20201005234755213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="修改目标"><br>这个可以直接使用替换功能，但是要注意 class 里或 ID 里的 video 不要动</p>
-</li>
-<li><p>这步完成后，我尝试着运行了一下，发现还是不行，找了半天原因，最后发现应该是ID选择器的问题：把 video_2 的ID换成 dplayer_2 就行了，如下图，更改这两个即可：<br><img src="https://img-blog.csdnimg.cn/20201006000056933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="修改目标"></p>
-</li>
-<li><p>保存修改，刷新网页，效果就实现了</p>
-</li>
-</ol>
+<span class="token keyword">def</span> <span class="token function">fillList</span><span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>      <span class="token comment">#皮肤展示页面共43页</span>
+        new_url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"hero_&#123;&#125;.shtml"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>   <span class="token comment">#拼出每个页面url</span>
+        html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>new_url<span class="token punctuation">)</span>
+        soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> features <span class="token operator">=</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+        div_soup <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_ <span class="token operator">=</span> <span class="token string">'ListBigContent'</span><span class="token punctuation">)</span>
+        lis <span class="token operator">=</span> div_soup<span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span>    <span class="token comment">#查询li标签</span>
+
+        <span class="token keyword">for</span> li <span class="token keyword">in</span> lis<span class="token punctuation">:</span>
+            skin_url <span class="token operator">=</span> li<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> target<span class="token operator">=</span><span class="token string">'_blank'</span><span class="token punctuation">)</span>
+            skin_url <span class="token operator">=</span> skin_url<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span>
+            skinlist<span class="token punctuation">.</span>append<span class="token punctuation">(</span>skin_url<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"页面&#123;0&#125;解读完毕!"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            
+<span class="token keyword">def</span> <span class="token function">getImageAddress</span><span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> url <span class="token keyword">in</span> skinlist<span class="token punctuation">:</span>
+        html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> features <span class="token operator">=</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+        name_div <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_ <span class="token operator">=</span> <span class="token string">'pifuIntroText pifuIntroText2'</span><span class="token punctuation">)</span>
+        hero_name <span class="token operator">=</span> name_div<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+        skin_name <span class="token operator">=</span> name_div<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+        name <span class="token operator">=</span> hero_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> skin_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        name <span class="token operator">=</span> name<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>    <span class="token comment">#把字符中的"/"替换成空，否则会影响路径，都是K/DA的锅</span>
+        image_div <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_ <span class="token operator">=</span> <span class="token string">'pifuIntroPic pifuIntroPic2'</span><span class="token punctuation">)</span>
+
+        image_url <span class="token operator">=</span> image_div<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
+        image_url <span class="token operator">=</span> image_url<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span>
+        nameAndImage<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>name<span class="token punctuation">,</span>image_url<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&#123;0&#125;链接已获取!"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+<span class="token keyword">def</span> <span class="token function">getImage</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            save_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path<span class="token punctuation">,</span> nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">'.jpg'</span><span class="token punctuation">)</span>
+            url <span class="token operator">=</span> nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+            r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>save_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                image <span class="token operator">=</span> r<span class="token punctuation">.</span>content
+                <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>save_path<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>image<span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125;保存成功!'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125;已存在'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125;保存失败'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    skinlist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    nameAndImage <span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    path <span class="token operator">=</span> <span class="token string">"./image"</span> 
+    url <span class="token operator">=</span> <span class="token string">"http://lol.52pk.com/pifu/hero/"</span>
+    fillList<span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"fillList成功"</span><span class="token punctuation">)</span>
+    getImageAddress<span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getImageAddress成功"</span><span class="token punctuation">)</span>
+    getImage<span class="token punctuation">(</span>path<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getImage成功"</span><span class="token punctuation">)</span>
+
+main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
             </div>
             <hr/>
@@ -890,16 +915,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
-                                <a href="/tags/Matery/">
-                                    <span class="chip bg-color">Matery</span>
-                                </a>
-                            
-                                <a href="/tags/Blog/">
-                                    <span class="chip bg-color">Blog</span>
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
                                 </a>
                             
                         </div>
@@ -1204,35 +1225,90 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/11/python-pi-liang-xiu-gai-wen-jian-ming/">
+                <a href="/2020/10/13/python-pa-qu-lol-gao-qing-pi-fu-bi-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="Python批量修改文件名">
+                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="Python爬取LOL高清皮肤壁纸">
                         
-                        <span class="card-title">Python批量修改文件名</span>
+                        <span class="card-title">Python爬取LOL高清皮肤壁纸</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            批量修改文件名，不用一直点鼠标了
+                            爬取精美的LOL高清皮肤壁纸
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/12/python-pa-qu-ruan-ke-zhong-guo-da-xue-pai-ming-2020-ban-wang-ye/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="Python爬取软科中国大学排名2020版网页">
+                        
+                        <span class="card-title">Python爬取软科中国大学排名2020版网页</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python爬取中国大学排名2020版
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
                                 </a>
                             
                             
@@ -1250,61 +1326,8 @@
                         <span class="chip bg-color">文件操作</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/10/04/sdb-ge-shi-shu-ju-ku-zhuan-shp-fang-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="sdb格式数据库转shp方法">
-                        
-                        <span class="card-title">sdb格式数据库转shp方法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            SDB数据库转shp方法分享
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/GIS/" class="post-category">
-                                    GIS
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/GIS/">
-                        <span class="chip bg-color">GIS</span>
-                    </a>
-                    
-                    <a href="/tags/SuperMap/">
-                        <span class="chip bg-color">SuperMap</span>
-                    </a>
-                    
-                    <a href="/tags/SDB%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">SDB数据库</span>
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
                 </div>
