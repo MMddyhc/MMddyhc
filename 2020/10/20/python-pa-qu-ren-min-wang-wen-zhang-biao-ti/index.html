@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="萤火放映厅——记录我的好时光, MMddyhc">
+    <meta name="keywords" content="Python爬取人民网文章标题, MMddyhc">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>萤火放映厅——记录我的好时光 | MMddyhc</title>
+    <title>Python爬取人民网文章标题 | MMddyhc</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/%E9%A3%9E%E6%9C%BA.png">
 	<link rel="stylesheet" href="/js/prism/prism.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/awesome/css/all.css">
@@ -614,464 +614,335 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                世外の桃Lin
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['用心过每一天，就像那是你生命中的最后一天','用心做好每一件事，因为那可能是你能做的最后一件事'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 30,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python爬取人民网文章标题</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
 
 
-    </div>
-</div>
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/tocbot/tocbot.css">
 <style>
-    .friends-container {
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
         margin-top: -100px;
-        margin-bottom: 30px;
+        visibility: hidden;
     }
 
-    .friends-container .tag-title {
-        margin-bottom: 10px;
-        color: #3C4858;
-        font-size: 1.75rem;
-        font-weight: 400;
+    #articleContent :focus {
+        outline: none;
     }
 
-    .frind-ship img {
-        border-radius: 5px;
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
     }
 
-    /* 以下是按钮样式 */
-
-    .frind-ship {
-        padding: 10px 20px;
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
     }
 
-    .frind-ship .title {
-        display: flex;
-        align-items: center;
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
     }
 
-    .frind-ship .title div {
-        color: #fff;
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
         padding-left: 10px;
     }
 
-    .frind-ship .title img {
-        width: 100px;
-        height: 150px;
-        flex-shrink: 0;
+    #toc-content ol li {
+        padding-left: 10px;
     }
 
-    .frind-ship .title h2 {
-        padding-bottom: 5px;
-        border-bottom: 2px solid #fff;
-        position: relative;
-        top:-15px;
-        left: 3px;
-    }
-	
-    .frind-ship .title h3 {
-		margin-top: -5px;                                                  
-        padding-bottom: 2px;
-        border-bottom: 2px solid #fff;
-        position: relative;
-        top:-15px;
-        left: 3px;
-	}
-    .frind-ship .title h5 {
-	margin-top: -5px;  
-        padding-bottom: 5px;
-        position: relative;
-        top:-15px;
-        left: 3px;
-	}
-    .friend-button {
-        display: flex;
-        justify-content: center;
-        margin-bottom: -27px;
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
     }
 
-    .friend-button a {
-        border-radius: 40px;
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
-    .friend-all .tag-post {
-        margin-bottom: 30px;
+    #toc-content .is-active-link {
+        color: #42b983;
     }
 
-    .button-caution {
-        background-color: #FF4351;
-        border-color: #FF4351;
-        color: #FFF;
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
     }
 
-    .button {
-        font-weight: 300;
-        font-size: 16px;
-        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-decoration: none;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 40px;
-        margin: 0;
-        display: inline-block;
-        appearance: none;
-        cursor: pointer;
-        border: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: .3s;
-        transition-duration: .3s;
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
     }
 
-    .title {
-        margin-bottom: 0rem !important;
-    }
-
-    .card {
-        margin: 2rem 0 1rem 0 !important;
-    }
-
-    .button-glow.button-caution {
-        -webkit-animation-name: glowing-caution;
-        animation-name: glowing-caution;
-    }
-
-    @-webkit-keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    @keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    .button-caution:hover {
-        background-color: #ff7680;
-        border-color: #ff7680;
-        color: #FFF;
-        text-decoration: none;
-    }
-
-    .frind-card1 {
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .frind-card2 {
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .frind-card3 {
-        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
-
-    .frind-card4 {
-        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
-
-    .frind-card5 {
-        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-    }
-
-    .frind-card6 {
-        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    }
-
-    .frind-card7 {
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    }
-
-    .frind-card8 {
-        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    }
-
-    .frind-card9 {
-        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-    }
-
-    .frind-card10 {
-        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    }
-
-    article .card {
-        overflow: visible !important;
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
     }
 </style>
-
-<main class="content">
-    <div class="container friends-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-tv"></i>&nbsp;&nbsp;萤火放映厅——记录我的好时光
-                </div>
-                <article id="friends-link">
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
                     
-                    
-                    <div class="row tags-posts friend-all">
+                    <div class="article-tag">
                         
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
                         
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card1">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_wxhn.jpg" alt="img">
-                                        <div>
-                                            <h2>我，喜欢你</h2>
-											<h3>剧情/爱情</h3>
-											<h3>★★★</h3>
-											<h5>在看ing</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/34908020/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
+                            </a>
                         
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card2">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_hgnyjs.jpg" alt="img">
-                                        <div>
-                                            <h2>灰姑娘药剂师</h2>
-											<h3>剧情</h3>
-											<h3>★★★★★</h3>
-											<h5>已看完（2020/10/13）</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/34948447/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card3">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_cq.jpg" alt="img">
-                                        <div>
-                                            <h2>重启之极海听雷</h2>
-											<h3>悬疑/冒险</h3>
-											<h3>★★</h3>
-											<h5>拖沓，已弃剧</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/35182499/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card4">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_cmdzx.jpg" alt="img">
-                                        <div>
-                                            <h2>沉默的真相</h2>
-											<h3>悬疑/犯罪</h3>
-											<h3>★★★★★</h3>
-											<h5>已看完（2020/9/22）</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/35182499/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card5">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_mtdl.jpg" alt="img">
-                                        <div>
-                                            <h2>摩天大楼</h2>
-											<h3>悬疑/犯罪</h3>
-											<h3>★★★★★</h3>
-											<h5>已看完（2020/8/25）</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/33393274/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card6">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_zf.jpg" alt="img">
-                                        <div>
-                                            <h2>知否</h2>
-											<h3>古装/爱情</h3>
-											<h3>★★★★★★</h3>
-											<h5>已二刷（疫情期间）</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/26928226/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card7">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_fzrsw.jpg" alt="img">
-                                        <div>
-                                            <h2>非自然死亡</h2>
-											<h3>悬疑/犯罪</h3>
-											<h3>★★★★★★</h3>
-											<h5>已二刷（疫情期间）</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/27140017/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card8">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_movies/m_jynh.jpg" alt="img">
-                                        <div>
-                                            <h2>校阅女孩</h2>
-											<h3>剧情/爱情</h3>
-											<h3>★★★★★</h3>
-											<h5>已看完（2017/8）</h5>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://movie.douban.com/subject/27045345/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            了解影片
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/%E8%AF%8D%E4%BA%91/">
+                                <span class="chip bg-color">词云</span>
+                            </a>
                         
                     </div>
                     
-                </article>
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-10-20
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    779
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
-        <div class="card">
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Python爬取人民网文章标题"><a href="#Python爬取人民网文章标题" class="headerlink" title="Python爬取人民网文章标题"></a>Python爬取人民网文章标题</h1><h2 id="兴趣点："><a href="#兴趣点：" class="headerlink" title="兴趣点："></a>兴趣点：</h2><p>还是为了练手，开始想爬人民网主页的所有文章的，但是发现不同板块的页面结构不一样，有的页面还是论坛？？？我人晕了，最后改弄词云了，无奈╮(╯▽╰)╭</p>
+<h2 id="爬取网址："><a href="#爬取网址：" class="headerlink" title="爬取网址："></a>爬取网址：</h2><p>传送门：<a target="_blank" rel="noopener" href="http://www.people.com.cn/">http://www.people.com.cn/</a></p>
+<h2 id="爬虫大体思路和方法："><a href="#爬虫大体思路和方法：" class="headerlink" title="爬虫大体思路和方法："></a>爬虫大体思路和方法：</h2><p>大体思路：<br>（1）这个页面相对简单，获取页面标签里的文本和链接就不说了<br>（2）利用jieba库的analyse自动分析方法拆分分析文本<br>（3）利用Wordcloud的方法实现词云</p>
+<p>方法：<br>（1）页面获取方法：getHTMLText(url)<br>（2）获取新闻标题和链接的方法：fillList(html,newslist)<br>（3）利用jieba库和Wordcloud生成词云方法：getCloud(html,path)</p>
+<p>参数介绍：<br>（1）newslist：存储新闻标题和对应链接的列表<br>（2）path：词云图本地存储路径</p>
+<h2 id="重难点介绍："><a href="#重难点介绍：" class="headerlink" title="重难点介绍："></a>重难点介绍：</h2><p>（1）关于jieba库和Wordcloud库：<br>这两个库在我之前学习计算机二级Python的时候就了解过并下载了，所以这里就不再介绍了</p>
+<p>（2）join() 和 append() 方法的区别：<br><strong>append是list（列表）的方法，函数参数是可以是任意一个元素，作用是在列表的最后添加上这个新元素<br>join是string（字符串）的方法，函数参数是一个由字符串组成的列表，作用是用字符串把这个字符串列表里的字符串连接起来</strong></p>
+<p>（3）jieba.analyse 和 textrank 简单用法：<br>传送门：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/1061321925wu/p/12518541.html">https://www.cnblogs.com/1061321925wu/p/12518541.html</a></p>
+<p>（4）Wordcloud方法与参数：<br>传送门：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/delav/articles/7837975.html">https://www.cnblogs.com/delav/articles/7837975.html</a></p>
+<p>（5）wordcloud使之支持中文：<br>下载能够支持的字体即可：<br>SimHei字体：<a target="_blank" rel="noopener" href="https://www.uslogger.com/details/3">https://www.uslogger.com/details/3</a><br>注意是font_path，不是font；注意是font_path，不是font；注意是font_path，不是font；我自罚三杯</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">font_path <span class="token operator">=</span> <span class="token string">r"F:\Fonts\SimHei.ttf"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（6）plt.imshow() 与 plt.show() 区别：<br><strong>plt.imshow()：负责对图像进行处理，并显示其格式<br>plt.show()：则是将plt.imshow()处理后的函数显示出来<br>plt.axis(‘off’)：去掉图像的坐标轴</strong></p>
+<h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token keyword">import</span> jieba<span class="token punctuation">.</span>analyse
+<span class="token keyword">from</span> wordcloud <span class="token keyword">import</span> WordCloud
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token keyword">def</span> <span class="token function">getHTMLText</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        kv <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"user-agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0"</span><span class="token punctuation">&#125;</span>
+        r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> kv<span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>encoding <span class="token operator">=</span> r<span class="token punctuation">.</span>apparent_encoding
+        <span class="token keyword">return</span> r<span class="token punctuation">.</span>text
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getHTMLText失败！"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">""</span>
+
+<span class="token comment">#获取新闻标题和链接的方法</span>
+<span class="token keyword">def</span> <span class="token function">fillList</span><span class="token punctuation">(</span>html<span class="token punctuation">,</span>newslist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> ul <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"ul"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"list14"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> li <span class="token keyword">in</span> ul<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> a <span class="token keyword">in</span> li<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                newslist<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">.</span>text<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>text<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> a<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#利用jieba库和Wordcloud生成词云方法</span>
+<span class="token keyword">def</span> <span class="token function">getCloud</span><span class="token punctuation">(</span>html<span class="token punctuation">,</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+    news_text <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">for</span> news <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"ul"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"list14"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        news_text <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>news<span class="token punctuation">.</span>text<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> jieba<span class="token punctuation">.</span>analyse<span class="token punctuation">.</span>textrank<span class="token punctuation">(</span>news_text<span class="token punctuation">,</span> topK<span class="token operator">=</span><span class="token number">1000000</span><span class="token punctuation">,</span> withWeight <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>  	<span class="token comment">#文本拆分分析</span>
+    keywords <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> result<span class="token punctuation">:</span>
+        keywords<span class="token punctuation">[</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>keywords<span class="token punctuation">)</span>
+    <span class="token comment">#词云的相关设置</span>
+    wc <span class="token operator">=</span> WordCloud<span class="token punctuation">(</span>
+        font_path <span class="token operator">=</span> <span class="token string">r"F:\Fonts\SimHei.ttf"</span><span class="token punctuation">,</span>
+        background_color<span class="token operator">=</span><span class="token string">"skyblue"</span><span class="token punctuation">,</span>
+        max_words<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span>
+        width <span class="token operator">=</span> <span class="token number">800</span><span class="token punctuation">,</span>
+        height <span class="token operator">=</span> <span class="token number">600</span><span class="token punctuation">,</span>
+        max_font_size <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        min_font_size <span class="token operator">=</span> <span class="token number">2</span>
+        <span class="token punctuation">)</span>
+    wc<span class="token punctuation">.</span>generate_from_frequencies<span class="token punctuation">(</span>keywords<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>wc<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">"off"</span><span class="token punctuation">)</span>		<span class="token comment">#去掉坐标轴</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>			<span class="token comment">#显示图像</span>
+    wc<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span>path<span class="token punctuation">)</span>	<span class="token comment">#保存图像</span>
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    newslist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    url <span class="token operator">=</span> <span class="token string">"http://www.people.com.cn/"</span>
+    path <span class="token operator">=</span> <span class="token string">"rmwCloud.jpg"</span>
+    html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    fillList<span class="token punctuation">(</span>html<span class="token punctuation">,</span>newslist<span class="token punctuation">)</span>
+    getCloud<span class="token punctuation">(</span>html<span class="token punctuation">,</span>path<span class="token punctuation">)</span>
+ 
+main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h2><p><img src="https://img-blog.csdnimg.cn/20201019172210718.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="词云"></p>
+
+            </div>
+            <hr/>
 
             
 
-            
 
-            
 
-            
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AF%8D%E4%BA%91/">
+                                    <span class="chip bg-color">词云</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/share/css/share.min.css">
+<div id="article-share">
 
+    
+    <div class="social-share" data-sites="google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
             
-            <style>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -1333,19 +1204,256 @@
     });
 </script>
 
-            
+    
 
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/10/20/python-pa-qu-ren-min-wang-wen-zhang-biao-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="Python爬取人民网文章标题">
+                        
+                        <span class="card-title">Python爬取人民网文章标题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            爬取人民网文章标题并生成词云
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%8D%E4%BA%91/">
+                        <span class="chip bg-color">词云</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/17/python-pa-qu-mao-yan-dian-ying-top100-bang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="Python爬取猫眼电影TOP100榜">
+                        
+                        <span class="card-title">Python爬取猫眼电影TOP100榜</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            爬取猫眼电影TOP100榜，适合练手
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
-</main>
+</div>
 
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
-        $('#friends-link').masonry({
-            itemSelector: '.friend-div'
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
     });
 </script>
+
+    
+
+</main>
+
+
 
 
     <script src="/js/prism/prism.js" async></script>
