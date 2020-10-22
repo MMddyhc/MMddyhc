@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python爬取LOL高清皮肤壁纸, MMddyhc">
+    <meta name="keywords" content="Python爬取链家租房信息, MMddyhc">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python爬取LOL高清皮肤壁纸 | MMddyhc</title>
+    <title>Python爬取链家租房信息 | MMddyhc</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/%E9%A3%9E%E6%9C%BA.png">
 	<link rel="stylesheet" href="/js/prism/prism.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/libs/awesome/css/all.css">
@@ -618,12 +618,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/MMddyhc/blog_pictures/raw/master/page_blogs/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python爬取LOL高清皮肤壁纸</h1>
+                    <h1 class="description center-align post-title">Python爬取链家租房信息</h1>
                 </div>
             </div>
         </div>
@@ -769,28 +769,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-13
+                    2020-10-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-13
+                    2020-10-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    807
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -805,24 +805,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Python爬取LOL高清皮肤壁纸"><a href="#Python爬取LOL高清皮肤壁纸" class="headerlink" title="Python爬取LOL高清皮肤壁纸"></a>Python爬取LOL高清皮肤壁纸</h1><h2 id="兴趣点："><a href="#兴趣点：" class="headerlink" title="兴趣点："></a>兴趣点：</h2><p>这两天复习爬虫，CSDN上看到了一个爬取LOL皮肤的博客，哎这个有意思，看了一下他写的代码，感觉难度还可以，就结合着自己的理解写了一下</p>
-<h2 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h2><p>传送门：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44936889/article/details/103707406">https://blog.csdn.net/weixin_44936889/article/details/103707406</a></p>
-<h2 id="爬取网址："><a href="#爬取网址：" class="headerlink" title="爬取网址："></a>爬取网址：</h2><p>传送门：<a target="_blank" rel="noopener" href="http://lol.52pk.com/pifu/hero/">http://lol.52pk.com/pifu/hero/</a></p>
-<h2 id="爬虫大体思路及方法："><a href="#爬虫大体思路及方法：" class="headerlink" title="爬虫大体思路及方法："></a>爬虫大体思路及方法：</h2><p>大体思路：<br>（1）我们的目标网页共43页，每页有25个皮肤左右，点开是皮肤大图及相关内容，其中的大图链接就是我们的目标<br>（2）我们要先把大约43×25个皮肤大图展示页面的链接先爬出来放到一个列表中<br>（3）再根据列表中的链接采用循环的方法获取其中的“英雄名-皮肤名”和皮肤图片链接，并将其一对一写入一个列表<br>（4）按顺序爬取列表中图片链接对应的图片并输出对应的提示信息<br>方法：<br>（1）页面获取方法：getHTMLText(url)<br>（2）把所有皮肤页URL写入列表：fillList(skinlist,url)<br>（3）获取皮肤命名和图片URL：getImageAddress(skinlist,nameAndImage)<br>（4）图片下载及保存：getImage(path,nameAndImage)<br>参数解读：<br>（1）skinlist——保存所有皮肤页面链接的列表<br>（2）nameAndImage——保存皮肤命名和皮肤图片链接的列表<br>（3）path——本地保存路径</p>
-<h2 id="部分细节讲解："><a href="#部分细节讲解：" class="headerlink" title="部分细节讲解："></a>部分细节讲解：</h2><p>（1）观察网页原代码，找到页面的规律：<br><img src="https://img-blog.csdnimg.cn/20201013160854559.png#pic_center" alt="页面规律"><br>我们可以得知页面的真实地址，页面数43页和规律，所以后面的代码是这么写：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">:</span>      <span class="token comment">#皮肤展示页面共43页</span>
-new_url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"hero_&#123;&#125;.shtml"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>   <span class="token comment">#拼出每个页面url</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>这里我是为了展示，其实没必要爬43页，毕竟Python运行速度太慢了</p>
-<p>（2）目标网页可以识别Request请求，需要伪装成浏览器</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">kv <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"user-agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0"</span><span class="token punctuation">&#125;</span>
-r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> kv<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>（3）从页面中获取到的文本尽量用 .strip() 方法去除两端空格</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name <span class="token operator">=</span> hero_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> skin_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（4）踩坑记录：因为阿狸的KD/A皮肤文本里有一个”/“，所以会造成找不到路径的错误，替换成空即可</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name <span class="token operator">=</span> name<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（5）踩坑记录：关于 url 变量，在循环中不要写出下面这样的代码，url会变！url会变！url会变！</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"hero_&#123;&#125;.shtml"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（6）Python标准异常：<br>菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-exceptions.html">https://www.runoob.com/python/python-exceptions.html</a><br>（7）关于打印进程提示信息：<br>有些同学可能认为这个没什么用，但这个很有用：一来可以提示程序运行的进度（Python运行实在是慢），二来可以用来差错，当断点使用</p>
+                <h1 id="Python爬取链家租房信息"><a href="#Python爬取链家租房信息" class="headerlink" title="Python爬取链家租房信息"></a>Python爬取链家租房信息</h1><h2 id="兴趣点："><a href="#兴趣点：" class="headerlink" title="兴趣点："></a>兴趣点：</h2><p>继续练手，今天以石家庄市开发区为例，爬取所有链家在租房屋信息<br>这种静态网页我已经练了很多了，已经驾轻就熟了</p>
+<h2 id="目标网站："><a href="#目标网站：" class="headerlink" title="目标网站："></a>目标网站：</h2><p>传送门：<a target="_blank" rel="noopener" href="https://sjz.lianjia.com/zufang/kaifaqu1/">https://sjz.lianjia.com/zufang/kaifaqu1/</a></p>
+<h2 id="爬虫大体思路与方法："><a href="#爬虫大体思路与方法：" class="headerlink" title="爬虫大体思路与方法："></a>爬虫大体思路与方法：</h2><h4 id="大体思路："><a href="#大体思路：" class="headerlink" title="大体思路："></a>大体思路：</h4><p>（1）找到翻页的规律（链家是静态网页，直接看浏览器上方显示的链接就能找到规律）<br>（2）获取我们想要的出租房的信息包括房源、面积、具体地址等，整理到列表中<br>（3）存储到本地</p>
+<h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><p>（1）getHTMLText(url)：页面获取方法<br>（2）fillList(url,roomlist)：把出租房的各种信息存入列表<br>（3）save(roomlist,path)：读取列表内容存入本地txt文件</p>
+<h4 id="参数介绍："><a href="#参数介绍：" class="headerlink" title="参数介绍："></a>参数介绍：</h4><p>（1）roomlist：存放出租房各种信息的列表<br>（2）path：本地存储路径</p>
+<h2 id="部分细节讲解："><a href="#部分细节讲解：" class="headerlink" title="部分细节讲解："></a>部分细节讲解：</h2><p>（1）获取house_name的写法：<br>为什么不直接用 find 方法找a标签？如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">house_name <span class="token operator">=</span> house<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"twoline"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样写获取不到内容，这个问题我也不清楚，也不是第一次遇到了，可能是a标签的特性</p>
+<p>所以改成了下面这样：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">house_name <span class="token operator">=</span> house<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item--title"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（2）为了使获取的内容更整齐，再次强调一下去空格：<br><strong>str.strip()：去除字符串两端的空格<br>str.replace(“旧字符”,”新字符”)：把旧字符替换成新字符，用于替换内部的空格、制表符和换行符</strong></p>
+<p>（3）有个别出租房没有提供部分信息可能导致爬虫中断：<br>在循环外套一个try——except抛出即可</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+	<span class="token keyword">for</span> house <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>	        
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"部分信息缺失，爬取失败*************************"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> re
 <span class="token keyword">import</span> os
@@ -839,69 +839,53 @@ r <span class="token operator">=</span> requests<span class="token punctuation">
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getHTMLText失败！"</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token string">""</span>
 
-<span class="token keyword">def</span> <span class="token function">fillList</span><span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>      <span class="token comment">#皮肤展示页面共43页</span>
-        new_url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"hero_&#123;&#125;.shtml"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>   <span class="token comment">#拼出每个页面url</span>
-        html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>new_url<span class="token punctuation">)</span>
-        soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> features <span class="token operator">=</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
-        div_soup <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_ <span class="token operator">=</span> <span class="token string">'ListBigContent'</span><span class="token punctuation">)</span>
-        lis <span class="token operator">=</span> div_soup<span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span>    <span class="token comment">#查询li标签</span>
-
-        <span class="token keyword">for</span> li <span class="token keyword">in</span> lis<span class="token punctuation">:</span>
-            skin_url <span class="token operator">=</span> li<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> target<span class="token operator">=</span><span class="token string">'_blank'</span><span class="token punctuation">)</span>
-            skin_url <span class="token operator">=</span> skin_url<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span>
-            skinlist<span class="token punctuation">.</span>append<span class="token punctuation">(</span>skin_url<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"页面&#123;0&#125;解读完毕!"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            
-<span class="token keyword">def</span> <span class="token function">getImageAddress</span><span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> url <span class="token keyword">in</span> skinlist<span class="token punctuation">:</span>
-        html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
-        soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> features <span class="token operator">=</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
-        name_div <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_ <span class="token operator">=</span> <span class="token string">'pifuIntroText pifuIntroText2'</span><span class="token punctuation">)</span>
-        hero_name <span class="token operator">=</span> name_div<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
-        skin_name <span class="token operator">=</span> name_div<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
-        name <span class="token operator">=</span> hero_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> skin_name<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        name <span class="token operator">=</span> name<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>    <span class="token comment">#把字符中的"/"替换成空，否则会影响路径，都是K/DA的锅</span>
-        image_div <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_ <span class="token operator">=</span> <span class="token string">'pifuIntroPic pifuIntroPic2'</span><span class="token punctuation">)</span>
-
-        image_url <span class="token operator">=</span> image_div<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
-        image_url <span class="token operator">=</span> image_url<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span>
-        nameAndImage<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>name<span class="token punctuation">,</span>image_url<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&#123;0&#125;链接已获取!"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    
-<span class="token keyword">def</span> <span class="token function">getImage</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            save_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path<span class="token punctuation">,</span> nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">'.jpg'</span><span class="token punctuation">)</span>
-            url <span class="token operator">=</span> nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-            r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>save_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                image <span class="token operator">=</span> r<span class="token punctuation">.</span>content
-                <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>save_path<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-                    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>image<span class="token punctuation">)</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125;保存成功!'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125;已存在'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
-    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125;保存失败'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>nameAndImage<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
-
+<span class="token keyword">def</span> <span class="token function">fillList</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>roomlist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		page_url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">"pg&#123;&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+		html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>page_url<span class="token punctuation">)</span>
+		soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span><span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+		<span class="token keyword">try</span><span class="token punctuation">:</span>
+		    <span class="token keyword">for</span> house <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		        house_name <span class="token operator">=</span> house<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item--title"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		        house_price <span class="token operator">=</span> house<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"span"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item-price"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		        des <span class="token operator">=</span> house<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item--des"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		        deslist <span class="token operator">=</span> des<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+		        house_address <span class="token operator">=</span> deslist<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	                house_area <span class="token operator">=</span> deslist<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		        house_towards <span class="token operator">=</span> deslist<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		        house_roomtype <span class="token operator">=</span> deslist<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		        house_floor <span class="token operator">=</span> deslist<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span>
+		        house_tips <span class="token operator">=</span> house<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">,</span>class_ <span class="token operator">=</span> <span class="token string">"content__list--item--bottom oneline"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span>
+		        roomlist<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>house_name<span class="token punctuation">,</span> house_price<span class="token punctuation">,</span> house_address<span class="token punctuation">,</span> house_area<span class="token punctuation">,</span> house_towards<span class="token punctuation">,</span> house_roomtype<span class="token punctuation">,</span> house_floor<span class="token punctuation">,</span> house_tips<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		        <span class="token keyword">print</span><span class="token punctuation">(</span>house_address <span class="token operator">+</span> <span class="token string">"爬取成功！"</span><span class="token punctuation">)</span>
+		<span class="token keyword">except</span><span class="token punctuation">:</span>
+	    	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"部分信息缺失，爬取失败*************************"</span><span class="token punctuation">)</span>
+                
+<span class="token keyword">def</span> <span class="token function">save</span><span class="token punctuation">(</span>roomlist<span class="token punctuation">,</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span> <span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"房源"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"价格"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"具体地址"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"面积"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"朝向"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"房型"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"层数"</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">"其他优势"</span><span class="token operator">+</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> room <span class="token keyword">in</span> roomlist<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>
+                room<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span>
+                room<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>room<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"存储成功！"</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    skinlist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    nameAndImage <span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    path <span class="token operator">=</span> <span class="token string">"./image"</span> 
-    url <span class="token operator">=</span> <span class="token string">"http://lol.52pk.com/pifu/hero/"</span>
-    fillList<span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>url<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"fillList成功"</span><span class="token punctuation">)</span>
-    getImageAddress<span class="token punctuation">(</span>skinlist<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getImageAddress成功"</span><span class="token punctuation">)</span>
-    getImage<span class="token punctuation">(</span>path<span class="token punctuation">,</span>nameAndImage<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getImage成功"</span><span class="token punctuation">)</span>
-
-main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    url <span class="token operator">=</span> <span class="token string">"https://sjz.lianjia.com/zufang/kaifaqu1/"</span>
+    roomlist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    path <span class="token operator">=</span> <span class="token string">"石家庄开发区租房信息.txt"</span>
+    fillList<span class="token punctuation">(</span>url<span class="token punctuation">,</span>roomlist<span class="token punctuation">)</span>
+    save<span class="token punctuation">(</span>roomlist<span class="token punctuation">,</span>path<span class="token punctuation">)</span>
+    
+main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="爬取结果展示："><a href="#爬取结果展示：" class="headerlink" title="爬取结果展示："></a>爬取结果展示：</h2><p>直接写入Excel未免太过麻烦，我习惯了写到txt再转到Excel的方法了(☄⊙ω⊙)☄<br>至于怎么用Excel按制表符分列大家应该都会吧？不会有人不会吧？不会吧？不会吧？哈哈<br><img src="https://img-blog.csdnimg.cn/20201022150038509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="txt显示"><br><img src="https://img-blog.csdnimg.cn/2020102214594976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="Excel显示"></p>
 
             </div>
             <hr/>
@@ -1225,29 +1209,29 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/17/python-pa-qu-mao-yan-dian-ying-top100-bang/">
+                <a href="/2020/10/22/python-pa-qu-lian-jia-zu-fang-xin-xi/">
                     <div class="card-image">
                         
+                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_blogs/2.jpg" class="responsive-img" alt="Python爬取链家租房信息">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="Python爬取猫眼电影TOP100榜">
-                        
-                        <span class="card-title">Python爬取猫眼电影TOP100榜</span>
+                        <span class="card-title">Python爬取链家租房信息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            爬取猫眼电影TOP100榜，适合练手
+                            以石家庄市开发区为例爬取链家出租房信息
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1260,6 +1244,7 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1282,24 +1267,23 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/12/python-pa-qu-ruan-ke-zhong-guo-da-xue-pai-ming-2020-ban-wang-ye/">
+                <a href="/2020/10/21/python-pa-qu-wang-yi-yun-yin-le-ping-lun/">
                     <div class="card-image">
                         
+                        <img src="https://gitee.com/MMddyhc/blog_pictures/raw/master/page_blogs/1.jpg" class="responsive-img" alt="Python爬取网易云音乐评论">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MMddyhc/MMddyhc.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="Python爬取软科中国大学排名2020版网页">
-                        
-                        <span class="card-title">Python爬取软科中国大学排名2020版网页</span>
+                        <span class="card-title">Python爬取网易云音乐评论</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python爬取中国大学排名2020版
+                            爬取毛不易《像我这样的人》网易云评论
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
                             </span>
                         <span class="publish-author">
                             
@@ -1320,12 +1304,12 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
-                        <span class="chip bg-color">文件操作</span>
-                    </a>
-                    
                     <a href="/tags/%E7%88%AC%E8%99%AB/">
                         <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/json/">
+                        <span class="chip bg-color">json</span>
                     </a>
                     
                 </div>
