@@ -780,7 +780,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-29
+                    2020-11-02
                 </div>
                 
 
@@ -815,7 +815,7 @@
 <h1 id="Python爬取bilibili弹幕并生成词云"><a href="#Python爬取bilibili弹幕并生成词云" class="headerlink" title="Python爬取bilibili弹幕并生成词云"></a>Python爬取bilibili弹幕并生成词云</h1><h2 id="目标网站："><a href="#目标网站：" class="headerlink" title="目标网站："></a>目标网站：</h2><p>哔哩哔哩：<a target="_blank" rel="noopener" href="https://www.bilibili.com/">https://www.bilibili.com/</a><br>我这里以 TES vs SN 第四场决胜局为例：</p>
 <h3 id="探索经历："><a href="#探索经历：" class="headerlink" title="探索经历："></a>探索经历：</h3><p>首先我们要找到我们想要爬取的弹幕都发在哪：<br>我们先播放这个视频，随便记住一条弹幕，到审查元素里面搜索<br><img src="https://img-blog.csdnimg.cn/20201027154159634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="审查元素"><br>哎，可以找到，然后我们再查看一下网页的源代码，没有搜索结果。。。。。。这说明bilibili的弹幕是动态加载的，是js请求的数据，可能是json，也可能是XML</p>
 <p>通常我们都会通过翻页等操作让网页进行js请求，我们在“后台”盯着，看有没有多出来的文件，依次翻看一下里面的东西，看看有没有存放弹幕的文件，于是我继续播放视频，列表里也确实多了很多文件<br><img src="https://img-blog.csdnimg.cn/20201027155245235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="开发者工具"><br>但很可惜并没有找到我想要的存储弹幕的文件</p>
-<p>我觉得播放视频还是没能请求到弹幕文件，于是我找到了第二种方法：（需要先登陆一下）<br><img src="https://img-blog.csdnimg.cn/20201027155809205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="请求方法"><br>如图，切换不同的日期可以找到我们想要的存储弹幕文件，是个XML文件：<br><img src="https://img-blog.csdnimg.cn/2020102716042156.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="找到目标"><br>这样，我们就找到了目标url，复制url打开就是我们想要的弹幕页面<br><img src="https://img-blog.csdnimg.cn/20201027160509828.png#pic_center" alt="在这里插入图片描述"><br>同样，我们也找到了规律这里有两个可以更换的参数：<br>（1）oid：这个就是视频的id（这个可不太好找）<br><img src="https://img-blog.csdnimg.cn/2020102716181561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="oid"><br>（2）date：这个很明显是日期</p>
+<p>我觉得播放视频还是没能请求到弹幕文件，于是我找到了第二种方法：（需要先登陆一下）<br><img src="https://img-blog.csdnimg.cn/20201027155809205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="请求方法"><br>如图，切换不同的日期可以找到我们想要的存储弹幕文件，是个XML文件：<br><img src="https://img-blog.csdnimg.cn/2020102716042156.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="找到目标"><br>这样，我们就找到了目标url，复制url打开就是我们想要的弹幕页面<br><img src="https://img-blog.csdnimg.cn/20201027160509828.png#pic_center" alt="URL"><br>同样，我们也找到了规律这里有两个可以更换的参数：<br>（1）oid：这个就是视频的id（这个可不太好找）<br><img src="https://img-blog.csdnimg.cn/2020102716181561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNDk2MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="oid"><br>（2）date：这个很明显是日期</p>
 <h3 id="真正目标："><a href="#真正目标：" class="headerlink" title="真正目标："></a>真正目标：</h3><p>传送门：<a target="_blank" rel="noopener" href="https://api.bilibili.com/x/v1/dm/list.so?oid=249509876&date2020-10-26">https://api.bilibili.com/x/v1/dm/list.so?oid=249509876&amp;date2020-10-26</a></p>
 <h2 id="思路与方法："><a href="#思路与方法：" class="headerlink" title="思路与方法："></a>思路与方法：</h2><p>（1）这个XML文件也是标签语言，用BeautifulSoup可以轻松爬取，存储到本地txt文件中<br>（2）利用jieba库对txt内容进行分词，再合并成一个空格分割的字符串（用于Wordcloud参数）<br>（3）使用Wordcloud生成词云并保存到本地</p>
 <h2 id="部分细节讲解："><a href="#部分细节讲解：" class="headerlink" title="部分细节讲解："></a>部分细节讲解：</h2><h3 id="弹幕标点符号和空格的去除："><a href="#弹幕标点符号和空格的去除：" class="headerlink" title="弹幕标点符号和空格的去除："></a>弹幕标点符号和空格的去除：</h3><p>使用正则表达式可以轻松搞定：（如果有下划线可以用replace()替换成空）</p>
@@ -1504,7 +1504,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.6k</span>&nbsp;字
+                class="white-color">8.7k</span>&nbsp;字
             
             
             
